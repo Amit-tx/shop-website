@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Delivery Information - VINTAGE STYLE. Fast and reliable delivery across Bangalore.">
+    <title>Delivery Information - VINTAGE STYLE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gray: {
+                            900: '#17191B',
+                            800: '#202326',
+                            750: '#25282B',
+                            700: '#34383C',
+                            600: '#A9ADB1',
+                            400: '#777D82',
+                        },
+                        amber: {
+                            600: '#D4AF37',
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body class="bg-gray-900">
+    <a href="#main" class="skip-to-main">Skip to main content</a>
+    <header class="sticky top-0 z-50">
+        <div class="header-container">
+            <a href="index.html" class="logo">VINTAGE</a>
+            <nav class="nav-links hidden md:flex">
+                <a href="index.html">Home</a>
+                <a href="shop.html">Shop</a>
+                <a href="shop.html?tab=new">New Arrivals</a>
+                <a href="shop.html?tab=sale">Sale</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <button class="text-gray-400 hover:text-amber-600 transition p-2" onclick="document.getElementById('searchModal').classList.remove('hidden')">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                </button>
+                <a href="https://wa.me/919876543210" target="_blank" class="text-gray-400 hover:text-green-500 transition p-2">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371 0-.57 0-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-9.746 9.798c0 2.7.734 5.31 2.126 7.565l-2.258 8.242a.75.75 0 00.95.95l8.24-2.258c2.254 1.39 4.865 2.125 7.565 2.125 5.39 0 9.797-4.406 9.797-9.796 0-2.593-.994-5.032-2.801-6.84-1.81-1.809-4.248-2.803-6.84-2.803z"></path></svg>
+                </a>
+                <button id="menuToggle" class="md:hidden text-gray-400 hover:text-amber-600 transition p-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+    <nav id="mobileMenu" class="mobile-menu translate-x-full">
+        <div class="flex justify-between items-center px-4 py-2 border-b border-gray-700">
+            <span class="text-white font-semibold">Menu</span>
+            <button id="menuClose" class="text-gray-400 hover:text-white p-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </div>
+        <ul>
+            <li><a href="index.html" class="block px-4 py-3 hover:bg-gray-750">Home</a></li>
+            <li><a href="shop.html" class="block px-4 py-3 hover:bg-gray-750">Shop</a></li>
+            <li><a href="delivery.html" class="block px-4 py-3 hover:bg-gray-750">Delivery</a></li>
+            <li><a href="exchange.html" class="block px-4 py-3 hover:bg-gray-750">Exchange</a></li>
+            <li><a href="contact.html" class="block px-4 py-3 hover:bg-gray-750">Contact</a></li>
+        </ul>
+    </nav>
+    <div id="searchModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-40 flex items-start justify-center pt-20">
+        <div class="bg-gray-800 w-full max-w-2xl mx-4 rounded-lg shadow-xl" onclick="event.stopPropagation()">
+            <div class="p-4 border-b border-gray-700 flex justify-between items-center">
+                <input id="searchInput" type="text" placeholder="Search products..." class="flex-1 bg-gray-750 text-white placeholder-gray-500 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-amber-600" autofocus>
+                <button onclick="document.getElementById('searchModal').classList.add('hidden')" class="ml-4 text-gray-400 hover:text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <div id="searchResults" class="max-h-96 overflow-y-auto"></div>
+        </div>
+    </div>
+    <main id="main" class="py-8">
+        <div class="container">
+            <a href="shop.html" class="text-amber-600 hover:text-amber-700 font-semibold mb-4 inline-block">← Back to Shop</a>
+            <h1 class="text-4xl font-bold text-white mb-2">Delivery Information</h1>
+            <p class="text-gray-400 mb-8">Fast and reliable delivery across Bangalore</p>
+
+            <!-- Delivery Overview -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <div class="bg-gray-800 rounded-lg p-6">
+                    <div class="text-3xl mb-3">🚚</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Delivery Time</h3>
+                    <p class="text-gray-400">2-3 business days from order confirmation</p>
+                </div>
+                <div class="bg-gray-800 rounded-lg p-6">
+                    <div class="text-3xl mb-3">💳</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Delivery Charges</h3>
+                    <p class="text-gray-400">₹49-99 depending on your location</p>
+                </div>
+                <div class="bg-gray-800 rounded-lg p-6">
+                    <div class="text-3xl mb-3">📍</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Service Area</h3>
+                    <p class="text-gray-400">All areas within Bangalore</p>
+                </div>
+            </div>
+
+            <!-- How it Works -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-white mb-6">How Delivery Works</h2>
+                <div class="space-y-4">
+                    <div class="bg-gray-800 rounded-lg p-6 border-l-4 border-amber-600">
+                        <h3 class="text-lg font-semibold text-white mb-2">Step 1: Order via WhatsApp</h3>
+                        <p class="text-gray-400">Send your order details through WhatsApp with product information, size, and quantity.</p>
+                    </div>
+                    <div class="bg-gray-800 rounded-lg p-6 border-l-4 border-amber-600">
+                        <h3 class="text-lg font-semibold text-white mb-2">Step 2: Confirmation</h3>
+                        <p class="text-gray-400">We'll confirm availability and send you the exact delivery charges based on your location.</p>
+                    </div>
+                    <div class="bg-gray-800 rounded-lg p-6 border-l-4 border-amber-600">
+                        <h3 class="text-lg font-semibold text-white mb-2">Step 3: Payment & Delivery</h3>
+                        <p class="text-gray-400">Make payment and we'll arrange delivery to your address within 2-3 business days.</p>
+                    </div>
+                    <div class="bg-gray-800 rounded-lg p-6 border-l-4 border-amber-600">
+                        <h3 class="text-lg font-semibold text-white mb-2">Step 4: Track Your Order</h3>
+                        <p class="text-gray-400">We'll keep you updated on your delivery status via WhatsApp.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Service Areas -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-white mb-6">Service Areas</h2>
+                <div class="bg-gray-800 rounded-lg p-8">
+                    <p class="text-gray-300 mb-4">We deliver across Bangalore including:</p>
+                    <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 text-gray-300">
+                        <li class="flex items-center gap-2"><span class="text-amber-600">✓</span> Indiranagar</li>
+                        <li class="flex items-center gap-2"><span class="text-amber-600">✓</span> Koramangala</li>
+                        <li class="flex items-center gap-2"><span class="text-amber-600">✓</span> Whitefield</li>
+                        <li class="flex items-center gap-2"><span class="text-amber-600">✓</span> MG Road</li>
+                        <li class="flex items-center gap-2"><span class="text-amber-600">✓</span> Jayanagar</li>
+                        <li class="flex items-center gap-2"><span class="text-amber-600">✓</span> Marathahalli</li>
+                        <li class="flex items-center gap-2"><span class="text-amber-600">✓</span> Bannerghatta Road</li>
+                        <li class="flex items-center gap-2"><span class="text-amber-600">✓</span> And more...</li>
+                    </ul>
+                    <p class="text-gray-400 mt-6 text-sm">For locations outside Bangalore or specific queries, please contact us on WhatsApp.</p>
+                </div>
+            </section>
+
+            <!-- FAQ -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-white mb-6">Frequently Asked Questions</h2>
+                <div class="space-y-4">
+                    <div class="bg-gray-800 rounded-lg p-6">
+                        <h3 class="text-lg font-semibold text-white mb-2">Can I track my order?</h3>
+                        <p class="text-gray-400">Yes! We'll send you delivery updates via WhatsApp including tracking information.</p>
+                    </div>
+                    <div class="bg-gray-800 rounded-lg p-6">
+                        <h3 class="text-lg font-semibold text-white mb-2">What if my area is outside the service zone?</h3>
+                        <p class="text-gray-400">Contact us on WhatsApp to discuss custom delivery options. We may be able to arrange delivery with higher charges.</p>
+                    </div>
+                    <div class="bg-gray-800 rounded-lg p-6">
+                        <h3 class="text-lg font-semibold text-white mb-2">How are products packaged?</h3>
+                        <p class="text-gray-400">All items are carefully packaged to ensure safe delivery. We use secure packaging materials and include care instructions.</p>
+                    </div>
+                    <div class="bg-gray-800 rounded-lg p-6">
+                        <h3 class="text-lg font-semibold text-white mb-2">What if the product arrives damaged?</h3>
+                        <p class="text-gray-400">Report damage within 24 hours of delivery on WhatsApp. We'll arrange a replacement or refund immediately.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA -->
+            <section class="bg-gradient-to-r from-gray-800 to-gray-750 rounded-lg p-8 text-center">
+                <h2 class="text-2xl font-bold text-white mb-4">Ready to Order?</h2>
+                <p class="text-gray-400 mb-6">Start shopping and get your favorite items delivered fast!</p>
+                <a href="shop.html" class="btn-primary">SHOP NOW</a>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-column"><h3>Shop</h3><ul><li><a href="shop.html">All Products</a></li></ul></div>
+            <div class="footer-column"><h3>Support</h3><ul><li><a href="delivery.html">Delivery</a></li><li><a href="exchange.html">Exchange</a></li></ul></div>
+            <div class="footer-column"><h3>Policies</h3><ul><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li></ul></div>
+            <div class="footer-column"><h3>Contact</h3><ul><li><a href="https://wa.me/919876543210" target="_blank">WhatsApp</a></li></ul></div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2024 VINTAGE STYLE. All rights reserved.</p></div>
+    </footer>
+    <script src="js/config.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
